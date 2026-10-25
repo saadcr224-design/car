@@ -43,6 +43,11 @@ export default function Offers() {
         <div className="offer-grid">
           {offers.map((o, i) => (
             <Reveal className="offer" key={o.id} delay={i * 130}>
+              {o.image && (
+                <div className="offer-img">
+                  <img src={o.image} alt={o.title} loading="lazy" onError={(e) => (e.currentTarget.parentElement.style.display = 'none')} />
+                </div>
+              )}
               <span className="offer-tag">{o.tag}</span>
               <h3>{o.title}</h3>
               <p>{o.text}</p>

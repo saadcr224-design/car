@@ -41,6 +41,6 @@ Every push to the connected branch redeploys automatically.
 ## Customising
 All text, cars, offers, CEO details and map locations live in **`src/data/site.js`**.
 - Replace showroom `lat`/`lng` with your real coordinates.
-- Add real car photos to `public/cars/` and set `image: '/cars/name.jpg'` on a car.
-- Add a CEO photo with `photo: '/ceo.jpg'` in the `ceo` object.
+- Car, CEO, vision and offer photos are free stock photos from [Pexels](https://www.pexels.com/license/) loaded from their CDN. To use your own, put the file in `public/` (e.g. `public/cars/name.jpg`) and set `image: '/cars/name.jpg'` (or `photo` for the CEO).
+- If a photo fails to load, cars fall back to a drawn illustration and the CEO to initials.
 - The booking form currently shows a confirmation only; connect it to your backend in `src/components/Contact.jsx`.

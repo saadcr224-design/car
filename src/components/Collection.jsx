@@ -5,6 +5,12 @@ import { categories, cars } from '../data/site';
 
 const money = (n) => '$' + n.toLocaleString();
 
+function CarImage({ car }) {
+  const [failed, setFailed] = useState(false);
+  if (!car.image || failed) return <CarArt shape={car.shape} color={car.color} />;
+  return <img src={car.image} alt={car.name} loading="lazy" onError={() => setFailed(true)} />;
+}
+
 export default function Collection({ onEnquire }) {
   const [cat, setCat] = useState('all');
   const list = useMemo(() => (cat === 'all' ? cars : cars.filter((c) => c.category === cat)), [cat]);
@@ -32,7 +38,7 @@ export default function Collection({ onEnquire }) {
             <article className="car-card" key={car.id} style={{ animationDelay: `${i * 70}ms` }}>
               <div className="car-media" style={{ '--tint': car.color }}>
                 {car.badge && <span className="badge">{car.badge}</span>}
-                {car.image ? <img src={car.image} alt={car.name} loading="lazy" /> : <CarArt shape={car.shape} color={car.color} />}
+                <CarImage car={car} />
               </div>
               <div className="car-body">
                 <div className="car-head">

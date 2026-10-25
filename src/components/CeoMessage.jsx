@@ -1,13 +1,15 @@
+import { useState } from 'react';
 import Reveal from './Reveal';
 import { ceo } from '../data/site';
 
 export default function CeoMessage() {
+  const [failed, setFailed] = useState(false);
   return (
     <section id="ceo" className="section">
       <div className="container ceo">
         <Reveal className="ceo-portrait" from="left">
           <div className="ceo-avatar">
-            {ceo.photo ? <img src={ceo.photo} alt={ceo.name} /> : <span>{ceo.initials}</span>}
+            {ceo.photo && !failed ? <img src={ceo.photo} alt={ceo.name} onError={() => setFailed(true)} /> : <span>{ceo.initials}</span>}
           </div>
           <div className="ceo-ring" />
         </Reveal>

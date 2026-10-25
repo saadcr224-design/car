@@ -9,6 +9,15 @@ export default function About() {
     <section id="about" className="section section-alt">
       <div className="container">
         <SectionTitle eyebrow="Who We Are" title="Our Vision & Goals" />
+        {vision.image && (
+          <Reveal className="vm-banner">
+            <img src={vision.image} alt="Customer receiving a new car at our showroom" loading="lazy" onError={(e) => (e.currentTarget.parentElement.style.display = 'none')} />
+            <div className="vm-banner-text">
+              <strong>25 years</strong>
+              <span>of putting drivers first</span>
+            </div>
+          </Reveal>
+        )}
         <div className="vm-grid">
           <Reveal className="vm-card" from="left">
             <span className="vm-label">Our Vision</span>
