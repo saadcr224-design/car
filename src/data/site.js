@@ -35,18 +35,18 @@ export const categories = [
 
 // `image` is the car photo; `shape` picks the fallback illustration if the photo fails to load.
 export const cars = [
-  { id: 1, image: pexels(16717543), name: 'Terrain X7', category: 'suv', shape: 'suv', color: '#2b6cb0', price: 58900, year: 2026, power: '380 hp', speed: '0-100 in 5.9s', fuel: 'Hybrid', seats: 7, badge: 'New' },
-  { id: 2, image: pexels(225841), name: 'Summit GT', category: 'suv', shape: 'suv', color: '#2f855a', price: 46500, year: 2026, power: '295 hp', speed: '0-100 in 6.8s', fuel: 'Petrol', seats: 5 },
-  { id: 3, image: pexels(951318), name: 'Aurora S', category: 'sedan', shape: 'sedan', color: '#4a5568', price: 39900, year: 2026, power: '255 hp', speed: '0-100 in 6.4s', fuel: 'Petrol', seats: 5, badge: 'Best Seller' },
-  { id: 4, image: pexels(790176), name: 'Meridian LX', category: 'sedan', shape: 'sedan', color: '#9b2c2c', price: 44200, year: 2025, power: '300 hp', speed: '0-100 in 5.8s', fuel: 'Hybrid', seats: 5 },
-  { id: 5, image: pexels(20190806), name: 'Viper R', category: 'sports', shape: 'sports', color: '#e63946', price: 128000, year: 2026, power: '640 hp', speed: '0-100 in 2.9s', fuel: 'Petrol', seats: 2, badge: 'Hot' },
-  { id: 6, image: pexels(30968112), name: 'Strada 911', category: 'sports', shape: 'sports', color: '#f2a516', price: 112500, year: 2025, power: '560 hp', speed: '0-100 in 3.2s', fuel: 'Petrol', seats: 2 },
-  { id: 7, image: pexels(9300916), name: 'Volt E-Line', category: 'electric', shape: 'sedan', color: '#00a6a6', price: 52900, year: 2026, power: '450 hp', speed: '0-100 in 3.9s', fuel: 'Electric · 610 km', seats: 5, badge: 'Eco' },
-  { id: 8, image: pexels(19041161), name: 'Ion Cross', category: 'electric', shape: 'suv', color: '#3182ce', price: 61400, year: 2026, power: '510 hp', speed: '0-100 in 4.4s', fuel: 'Electric · 540 km', seats: 5 },
-  { id: 9, image: pexels(19273958), name: 'Regalia One', category: 'luxury', shape: 'sedan', color: '#1a1a2e', price: 165000, year: 2026, power: '590 hp', speed: '0-100 in 4.3s', fuel: 'V12 Petrol', seats: 4, badge: 'Exclusive' },
-  { id: 10, image: pexels(14445435), name: 'Monarch V8', category: 'luxury', shape: 'suv', color: '#6b46c1', price: 142000, year: 2026, power: '550 hp', speed: '0-100 in 4.5s', fuel: 'Petrol', seats: 5 },
-  { id: 11, image: pexels(1007410), name: 'City Spark', category: 'hatchback', shape: 'hatch', color: '#dd6b20', price: 21900, year: 2026, power: '130 hp', speed: '0-100 in 9.1s', fuel: 'Petrol', seats: 5 },
-  { id: 12, image: pexels(10843557), name: 'Pulse e', category: 'hatchback', shape: 'hatch', color: '#38a169', price: 27500, year: 2026, power: '180 hp', speed: '0-100 in 7.4s', fuel: 'Electric · 390 km', seats: 5, badge: 'New' },
+  { id: 1, image: pexels(5704347), name: 'Terrain X7', category: 'suv', shape: 'suv', color: '#1a1a1a', price: 58900, year: 2026, power: '380 hp', speed: '0-100 in 5.9s', fuel: 'Hybrid', seats: 7, badge: 'New' },
+  { id: 2, image: pexels(12793120), name: 'Summit GT', category: 'suv', shape: 'suv', color: '#6b7280', price: 46500, year: 2026, power: '295 hp', speed: '0-100 in 6.8s', fuel: 'Petrol', seats: 5 },
+  { id: 3, image: pexels(11329085), name: 'Aurora S', category: 'sedan', shape: 'sedan', color: '#e5e7eb', price: 39900, year: 2026, power: '255 hp', speed: '0-100 in 6.4s', fuel: 'Petrol', seats: 5, badge: 'Best Seller' },
+  { id: 4, image: pexels(170811), name: 'Meridian LX', category: 'sedan', shape: 'sedan', color: '#2b6cb0', price: 44200, year: 2025, power: '300 hp', speed: '0-100 in 5.8s', fuel: 'Hybrid', seats: 5 },
+  { id: 5, image: pexels(39855), name: 'Viper R', category: 'sports', shape: 'sports', color: '#f2c200', price: 128000, year: 2026, power: '640 hp', speed: '0-100 in 2.9s', fuel: 'Petrol', seats: 2, badge: 'Hot' },
+  { id: 6, image: pexels(20190806), name: 'Strada 911', category: 'sports', shape: 'sports', color: '#a0a7b4', price: 112500, year: 2025, power: '560 hp', speed: '0-100 in 3.2s', fuel: 'Petrol', seats: 2 },
+  { id: 7, image: pexels(9300916), name: 'Volt E-Line', category: 'electric', shape: 'sedan', color: '#f1f1f1', price: 52900, year: 2026, power: '450 hp', speed: '0-100 in 3.9s', fuel: 'Electric · 610 km', seats: 5, badge: 'Eco' },
+  { id: 8, image: pexels(13163937), name: 'Ion Cross', category: 'electric', shape: 'suv', color: '#4a6b52', price: 61400, year: 2026, power: '510 hp', speed: '0-100 in 4.4s', fuel: 'Electric · 540 km', seats: 5 },
+  { id: 9, image: pexels(6872600), name: 'Regalia One', category: 'luxury', shape: 'sedan', color: '#2d2d35', price: 165000, year: 2026, power: '590 hp', speed: '0-100 in 4.3s', fuel: 'V12 Petrol', seats: 4, badge: 'Exclusive' },
+  { id: 10, image: pexels(225841), name: 'Monarch V8', category: 'luxury', shape: 'suv', color: '#b91c1c', price: 142000, year: 2026, power: '550 hp', speed: '0-100 in 4.5s', fuel: 'Petrol', seats: 5 },
+  { id: 11, image: pexels(810357), name: 'City Spark', category: 'hatchback', shape: 'hatch', color: '#1e40af', price: 21900, year: 2026, power: '130 hp', speed: '0-100 in 9.1s', fuel: 'Petrol', seats: 5 },
+  { id: 12, image: pexels(10843557), name: 'Pulse e', category: 'hatchback', shape: 'hatch', color: '#c53030', price: 27500, year: 2026, power: '180 hp', speed: '0-100 in 7.4s', fuel: 'Electric · 390 km', seats: 5, badge: 'New' },
 ];
 
 export const stats = [

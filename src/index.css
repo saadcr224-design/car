@@ -1,17 +1,20 @@
 :root {
   --red: #e63946;
   --red-dark: #c1121f;
-  --ink: #0f1117;
+  --ink: #0b0c10;
   --ink-2: #1b1e27;
-  --text: #2d3142;
-  --muted: #6b7080;
-  --bg: #ffffff;
-  --bg-alt: #f5f6f8;
-  --line: #e7e9ee;
+  --heading: #f4f5f8;
+  --text: #c5c9d3;
+  --muted: #8c91a1;
+  --bg: #16171c;
+  --bg-alt: #1c1e24;
+  --surface: #22252d;
+  --line: rgba(255, 255, 255, 0.08);
   --radius: 18px;
-  --shadow: 0 10px 30px rgba(15, 17, 23, 0.08);
-  --shadow-lg: 0 24px 60px rgba(15, 17, 23, 0.16);
+  --shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+  --shadow-lg: 0 24px 60px rgba(0, 0, 0, 0.5);
   --ease: cubic-bezier(0.22, 1, 0.36, 1);
+  color-scheme: dark;
 }
 
 *,
@@ -36,7 +39,7 @@ body {
 }
 
 h1, h2, h3, h4 {
-  color: var(--ink);
+  color: var(--heading);
   line-height: 1.15;
   margin: 0;
 }
@@ -193,10 +196,10 @@ textarea {
 }
 
 .navbar.scrolled {
-  background: rgba(255, 255, 255, 0.92);
+  background: rgba(22, 23, 28, 0.88);
   backdrop-filter: blur(14px);
   padding: 12px 0;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
 }
 
 .nav-inner {
@@ -215,7 +218,7 @@ textarea {
   transition: color 0.4s;
 }
 
-.navbar.scrolled .logo { color: var(--ink); }
+.navbar.scrolled .logo { color: var(--heading); }
 
 .logo-mark {
   display: grid;
@@ -263,7 +266,7 @@ textarea {
 }
 
 .nav-links a.active { color: #fff; }
-.navbar.scrolled .nav-links a.active { color: var(--red); }
+.navbar.scrolled .nav-links a.active { color: #fff; }
 
 .nav-cta { padding: 10px 22px; font-size: 0.9rem; }
 
@@ -285,7 +288,7 @@ textarea {
 }
 
 .navbar.scrolled .burger span,
-.navbar.open .burger span { background: var(--ink); }
+.navbar.open .burger span { background: var(--heading); }
 
 .navbar.open .burger span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
 .navbar.open .burger span:nth-child(2) { opacity: 0; }
@@ -385,7 +388,7 @@ textarea {
   height: 8px;
   margin-left: -2px;
   border-radius: 2px;
-  background: #fff;
+  background: var(--surface);
   animation: scrollDot 1.8s infinite;
 }
 
@@ -434,7 +437,7 @@ textarea {
   padding: 10px 20px;
   border-radius: 999px;
   border: 1px solid var(--line);
-  background: #fff;
+  background: var(--surface);
   color: var(--text);
   font-weight: 500;
   cursor: pointer;
@@ -456,13 +459,13 @@ textarea {
 .tab:hover { border-color: var(--red); color: var(--red); }
 
 .tab.active {
-  background: var(--ink);
-  border-color: var(--ink);
+  background: var(--red);
+  border-color: var(--red);
   color: #fff;
   box-shadow: var(--shadow);
 }
 
-.tab.active small { background: var(--red); color: #fff; }
+.tab.active small { background: rgba(0, 0, 0, 0.25); color: #fff; }
 
 .car-grid {
   display: grid;
@@ -471,7 +474,7 @@ textarea {
 }
 
 .car-card {
-  background: #fff;
+  background: var(--surface);
   border: 1px solid var(--line);
   border-radius: var(--radius);
   overflow: hidden;
@@ -487,23 +490,31 @@ textarea {
 
 .car-media {
   position: relative;
-  height: 200px;
+  height: 240px;
   display: grid;
   place-items: center;
-  background: radial-gradient(circle at 50% 120%, color-mix(in srgb, var(--tint) 25%, transparent), transparent 70%), linear-gradient(180deg, #f8f9fb, #eceef2);
+  background: radial-gradient(circle at 50% 120%, color-mix(in srgb, var(--tint) 25%, transparent), transparent 70%), linear-gradient(180deg, #2a2d36, #15161b);
   overflow: hidden;
 }
 
-.car-media img {
+.car-media .car-bg {
   position: absolute;
-  inset: 0;
+  inset: -20px;
+  background-size: cover;
+  background-position: center;
+  filter: blur(18px) brightness(0.45);
+}
+
+/* The photo is shown whole (contain) so the full car is always in frame. */
+.car-media .car-photo {
+  position: relative;
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: contain;
   transition: transform 0.8s var(--ease);
 }
 
-.car-card:hover .car-media img { transform: scale(1.08); }
+.car-card:hover .car-media .car-photo { transform: scale(1.05); }
 
 .car-art {
   width: 86%;
@@ -549,7 +560,7 @@ textarea {
 .price {
   text-align: right;
   font-weight: 700;
-  color: var(--ink);
+  color: var(--heading);
   font-size: 1.15rem;
   white-space: nowrap;
 }
@@ -580,7 +591,7 @@ textarea {
 
 .specs b {
   display: block;
-  color: var(--ink);
+  color: var(--heading);
   font-size: 0.95rem;
   font-weight: 600;
 }
@@ -651,7 +662,7 @@ textarea {
 .vm-card {
   padding: 44px;
   border-radius: var(--radius);
-  background: #fff;
+  background: var(--surface);
   box-shadow: var(--shadow);
   position: relative;
   overflow: hidden;
@@ -668,7 +679,7 @@ textarea {
 }
 
 .vm-card.dark {
-  background: var(--ink);
+  background: linear-gradient(135deg, #3a0d13, var(--ink));
   color: rgba(255, 255, 255, 0.85);
 }
 
@@ -676,7 +687,7 @@ textarea {
   display: block;
   font-size: 1.5rem;
   font-weight: 700;
-  color: var(--ink);
+  color: var(--heading);
   margin-bottom: 12px;
 }
 
@@ -693,7 +704,7 @@ textarea {
 .goal {
   padding: 32px 26px;
   border-radius: var(--radius);
-  background: #fff;
+  background: var(--surface);
   border: 1px solid var(--line);
   transition: transform 0.4s var(--ease), box-shadow 0.4s var(--ease), opacity 0.9s var(--ease) !important;
 }
@@ -791,7 +802,7 @@ textarea {
   border-left: 3px solid var(--red);
 }
 
-.signature strong { display: block; font-size: 1.2rem; color: var(--ink); }
+.signature strong { display: block; font-size: 1.2rem; color: var(--heading); }
 .signature span { color: var(--muted); }
 
 /* ---------- Offers (video banner) ---------- */
@@ -919,7 +930,7 @@ textarea {
 .loc-list {
   padding: 20px;
   overflow-y: auto;
-  background: #fff;
+  background: var(--surface);
   display: flex;
   flex-direction: column;
   gap: 12px;
@@ -939,7 +950,7 @@ textarea {
   padding: 16px 18px;
   border-radius: 14px;
   border: 1px solid var(--line);
-  background: #fff;
+  background: var(--surface);
   cursor: pointer;
   display: flex;
   flex-direction: column;
@@ -951,11 +962,11 @@ textarea {
 
 .loc.active {
   border-color: var(--red);
-  background: rgba(230, 57, 70, 0.05);
+  background: rgba(230, 57, 70, 0.1);
   box-shadow: inset 4px 0 0 var(--red);
 }
 
-.loc strong { color: var(--ink); }
+.loc strong { color: var(--heading); }
 .loc span { font-size: 0.88rem; color: var(--muted); }
 .loc em { font-style: normal; font-size: 0.85rem; color: var(--red); font-weight: 500; }
 .loc small { font-size: 0.8rem; color: var(--text); font-weight: 600; }
@@ -1012,9 +1023,12 @@ textarea {
   gap: 2px;
   font-family: 'Outfit', sans-serif;
   min-width: 190px;
+  color: #2d3142;
 }
 
-.popup strong { font-size: 1rem; color: var(--ink); }
+.map .leaflet-tile-pane { filter: invert(1) hue-rotate(180deg) brightness(0.95) contrast(0.9); }
+
+.popup strong { font-size: 1rem; color: #0f1117; }
 .popup em { font-style: normal; color: var(--red); font-weight: 500; margin-top: 4px; }
 .popup a { color: var(--red) !important; font-weight: 600; margin-top: 6px; }
 
@@ -1030,12 +1044,12 @@ textarea {
 
 .testimonial p {
   font-size: clamp(1.2rem, 2.4vw, 1.6rem);
-  color: var(--ink);
+  color: var(--heading);
   font-weight: 400;
   margin: 18px 0 24px;
 }
 
-.testimonial strong { display: block; color: var(--ink); }
+.testimonial strong { display: block; color: var(--heading); }
 .testimonial span { color: var(--muted); font-size: 0.9rem; }
 
 .dots {
@@ -1050,7 +1064,7 @@ textarea {
   height: 10px;
   border-radius: 999px;
   border: 0;
-  background: #cfd3db;
+  background: #3a3d48;
   cursor: pointer;
   transition: all 0.3s var(--ease);
 }
@@ -1100,7 +1114,7 @@ textarea {
 .contact-form {
   padding: 40px;
   border-radius: var(--radius);
-  background: #fff;
+  background: var(--surface);
   box-shadow: var(--shadow-lg);
   border: 1px solid var(--line);
 }
@@ -1118,7 +1132,7 @@ textarea {
   gap: 6px;
   font-size: 0.85rem;
   font-weight: 500;
-  color: var(--ink);
+  color: var(--heading);
 }
 
 .contact-form input,
@@ -1138,7 +1152,7 @@ textarea {
 .contact-form textarea:focus {
   outline: none;
   border-color: var(--red);
-  background: #fff;
+  background: var(--surface);
   box-shadow: 0 0 0 4px rgba(230, 57, 70, 0.12);
 }
 
@@ -1215,7 +1229,7 @@ textarea {
     align-items: flex-start;
     padding: 100px 32px 32px;
     gap: 22px;
-    background: #fff;
+    background: var(--surface);
     box-shadow: -10px 0 40px rgba(0, 0, 0, 0.15);
     transform: translateX(100%);
     transition: transform 0.45s var(--ease);
@@ -1223,7 +1237,7 @@ textarea {
 
   .navbar.open .nav-links { transform: none; }
   .nav-links a:not(.btn) { color: var(--text) !important; font-size: 1.1rem; }
-  .navbar.open .logo { color: var(--ink); }
+  .navbar.open .logo { color: var(--heading); }
   .burger { position: relative; z-index: 2; }
 
   .map-wrap { grid-template-columns: 1fr; height: auto; }

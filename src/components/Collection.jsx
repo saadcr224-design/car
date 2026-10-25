@@ -8,7 +8,12 @@ const money = (n) => '$' + n.toLocaleString();
 function CarImage({ car }) {
   const [failed, setFailed] = useState(false);
   if (!car.image || failed) return <CarArt shape={car.shape} color={car.color} />;
-  return <img src={car.image} alt={car.name} loading="lazy" onError={() => setFailed(true)} />;
+  return (
+    <>
+      <div className="car-bg" style={{ backgroundImage: `url(${car.image})` }} />
+      <img className="car-photo" src={car.image} alt={car.name} loading="lazy" onError={() => setFailed(true)} />
+    </>
+  );
 }
 
 export default function Collection({ onEnquire }) {
