@@ -21,6 +21,23 @@ npm run dev      # http://localhost:5173
 npm run build    # production build in dist/
 ```
 
+## Deploy to Vercel
+The project is ready for Vercel (`vercel.json` is included).
+
+**Option 1 — Vercel dashboard (easiest)**
+1. Go to https://vercel.com/new and import this GitHub repository.
+2. Vercel detects **Vite** automatically (build: `npm run build`, output: `dist`).
+3. Click **Deploy**. You get a live URL like `https://your-project.vercel.app`.
+
+**Option 2 — Vercel CLI**
+```bash
+npm i -g vercel
+vercel          # preview deployment
+vercel --prod   # production deployment
+```
+
+Every push to the connected branch redeploys automatically.
+
 ## Customising
 All text, cars, offers, CEO details and map locations live in **`src/data/site.js`**.
 - Replace showroom `lat`/`lng` with your real coordinates.
