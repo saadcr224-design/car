@@ -1,7 +1,8 @@
 import { useMemo, useState } from 'react';
 import SectionTitle from './SectionTitle';
 import CarArt from './CarArt';
-import { categories, cars } from '../data/site';
+import { categories } from '../data/site';
+import { useSiteData } from '../store';
 
 const money = (n) => '$' + n.toLocaleString();
 
@@ -17,8 +18,9 @@ function CarImage({ car }) {
 }
 
 export default function Collection({ onEnquire }) {
+  const { cars } = useSiteData();
   const [cat, setCat] = useState('all');
-  const list = useMemo(() => (cat === 'all' ? cars : cars.filter((c) => c.category === cat)), [cat]);
+  const list = useMemo(() => (cat === 'all' ? cars : cars.filter((c) => c.category === cat)), [cat, cars]);
 
   return (
     <section id="collection" className="section">

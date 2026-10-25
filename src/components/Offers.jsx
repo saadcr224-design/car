@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import SectionTitle from './SectionTitle';
 import Reveal from './Reveal';
-import { offers } from '../data/site';
+import { useSiteData } from '../store';
 
 // Offers run until the end of the current month.
 function useCountdown() {
@@ -21,6 +21,7 @@ function useCountdown() {
 
 export default function Offers() {
   const time = useCountdown();
+  const { offers } = useSiteData();
   return (
     <section id="offers" className="offers">
       <video className="bg-video" src="/videos/showcase.mp4" poster="/videos/showcase-poster.jpg" autoPlay muted loop playsInline />

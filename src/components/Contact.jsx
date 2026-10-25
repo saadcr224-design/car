@@ -1,9 +1,11 @@
 import { useEffect, useState } from 'react';
 import SectionTitle from './SectionTitle';
 import Reveal from './Reveal';
-import { brand, cars, locations } from '../data/site';
+import { brand, locations } from '../data/site';
+import { useSiteData } from '../store';
 
 export default function Contact({ carName }) {
+  const { cars, addRequest } = useSiteData();
   const [form, setForm] = useState({ name: '', phone: '', email: '', car: '', showroom: locations[0].name, date: '', message: '' });
   const [sent, setSent] = useState(false);
 
@@ -15,7 +17,8 @@ export default function Contact({ carName }) {
 
   const submit = (e) => {
     e.preventDefault();
-    // Hook this up to your backend / email service.
+    // Saved for the admin portal (this browser only). Hook up a backend / email service to receive requests anywhere.
+    addRequest(form);
     setSent(true);
   };
 
